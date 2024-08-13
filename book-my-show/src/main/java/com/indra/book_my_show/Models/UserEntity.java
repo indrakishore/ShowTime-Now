@@ -1,13 +1,17 @@
 package com.indra.book_my_show.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
-@NoArgsConstructor
+@Data
+@Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class UserEntity {
 
     @Id
@@ -16,4 +20,17 @@ public class UserEntity {
     private String name;
     private int age;
 
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @NonNull
+    @Column(unique = true)
+    private String mobNo;
+
+    private String address;
+
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    private List<TicketEntity> bookedTickets = new ArrayList<>();
+
 }
+
