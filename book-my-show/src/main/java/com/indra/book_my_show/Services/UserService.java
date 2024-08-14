@@ -3,6 +3,8 @@ package com.indra.book_my_show.Services;
 import com.indra.book_my_show.EntryDtos.UserEntryDto;
 import com.indra.book_my_show.Models.UserEntity;
 import com.indra.book_my_show.Repositories.UserRepository;
+import com.indra.book_my_show.convertors.UserConvertor;
+import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,17 +14,13 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public void addUser(UserEntryDto userEntryDto){
+    public String addUser(UserEntryDto userEntryDto) throws Exception, NullPointerException{
 
-        // Convert UserEntryDto to UserEntity and save.
-        UserEntity userEntity = UserEntity.builder()
-                .age(userEntryDto.getAge())
-                .name(userEntryDto.getName())
-                .address(userEntryDto.getAddress())
-                .email(userEntryDto.getEmail())
-                .mobNo(userEntryDto.getMobNo())
-                .build();
-
+        UserEntity userEntity = UserConvertor.convertDtoToEntity(userEntryDto);
         userRepository.save(userEntity);
+
+        return "User added successfully.";
     }
+
+
 }

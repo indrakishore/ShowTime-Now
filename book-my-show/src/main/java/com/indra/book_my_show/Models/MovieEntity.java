@@ -4,6 +4,7 @@ import com.indra.book_my_show.Genres.Genre;
 import com.indra.book_my_show.Genres.Language;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Entity
 @Table(name = "movies")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class MovieEntity {

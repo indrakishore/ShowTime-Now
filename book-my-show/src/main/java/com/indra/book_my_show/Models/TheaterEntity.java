@@ -1,6 +1,8 @@
 package com.indra.book_my_show.Models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,9 @@ import java.util.List;
 @Table(name = "theaters")
 @Data
 @NoArgsConstructor
+@Builder
+@AllArgsConstructor
+
 public class TheaterEntity {
 
     @Id
@@ -26,9 +31,4 @@ public class TheaterEntity {
 
     @OneToMany(mappedBy = "theaterEntity", cascade = CascadeType.ALL)
     private List<ShowEntity> showEntityList = new ArrayList<>();
-
-
-
-
-
 }
