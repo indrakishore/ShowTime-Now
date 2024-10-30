@@ -1,10 +1,9 @@
 package com.indra.book_my_show.Controllers;
 
-import com.indra.book_my_show.EntryDtos.MovieEntryDto;
+import com.indra.book_my_show.Request.MovieEntryDto;
 import com.indra.book_my_show.Services.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/movies")
+@RequestMapping("/api/v1/movie")
 public class MovieController {
 
     @Autowired
-    MovieService movieService;
+    private MovieService movieService;
 
-    @PostMapping("/add")
+    @PostMapping("/addMovie")
     public ResponseEntity<String> addMovie(@RequestBody MovieEntryDto movieEntryDto){
-
+        //you have made sure that only relevant attributes are expose to the client.
         try {
             String result = movieService.addMovie(movieEntryDto);
             return new ResponseEntity<>(result, HttpStatus.CREATED);
@@ -28,6 +27,7 @@ public class MovieController {
             String response = "Movie not added.";
             return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
         }
-
     }
+
+
 }

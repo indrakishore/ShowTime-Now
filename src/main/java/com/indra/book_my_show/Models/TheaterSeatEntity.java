@@ -1,24 +1,23 @@
 package com.indra.book_my_show.Models;
 
-import com.indra.book_my_show.Genres.SeatType;
+import com.indra.book_my_show.Enums.SeatType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Table(name = "theater_seats")
-@Data
-@Builder
+@Getter
+@Setter
 @AllArgsConstructor
+@Builder
 @NoArgsConstructor
 public class TheaterSeatEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
+    @Enumerated(value =  EnumType.STRING)
     private SeatType seatType;
     private String seatNo;
 

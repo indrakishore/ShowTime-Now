@@ -1,4 +1,4 @@
-package com.indra.book_my_show.Genres;
+package com.indra.book_my_show.Enums;
 
 public enum ShowType {
 

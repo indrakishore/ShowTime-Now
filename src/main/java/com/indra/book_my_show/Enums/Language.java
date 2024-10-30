@@ -1,9 +1,11 @@
-package com.indra.book_my_show.Genres;
+package com.indra.book_my_show.Enums;
 
 public enum Language {
     ENGLISH,
     HINDI,
-    SOUTH,
+    TAMIL,
     PUNJABI,
-    BHOJPURI
+    BHOJPURI,
+    MARATHI,
+    MALYALAM
 }

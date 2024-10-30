@@ -1,6 +1,6 @@
 package com.indra.book_my_show.convertors;
 
-import com.indra.book_my_show.EntryDtos.MovieEntryDto;
+import com.indra.book_my_show.Request.MovieEntryDto;
 import com.indra.book_my_show.Models.MovieEntity;
 
 public class MovieConvertor {
