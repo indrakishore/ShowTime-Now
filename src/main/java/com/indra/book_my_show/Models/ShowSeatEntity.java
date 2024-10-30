@@ -1,32 +1,32 @@
 package com.indra.book_my_show.Models;
 
-import com.indra.book_my_show.Genres.SeatType;
+import com.indra.book_my_show.Enums.SeatType;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
 @Entity
-@Table(name = "showSeats")
-@Data
+@Table(name = "show_seats")
+@Getter
+@Setter
 @NoArgsConstructor
+@Builder
 @AllArgsConstructor
 public class ShowSeatEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer showSeatId;
 
     private boolean isBooked;
-    private int price; //price for the Classic seat for that particular
+    private Integer price; //price for the Classic seat for that particular
     private String seatNumber;
 
     @Enumerated(value = EnumType.STRING)
     private SeatType seatType;
 
-    private Date bookedAt;
+//    private Date bookedAt;
 
     @ManyToOne
     @JoinColumn

@@ -1,4 +1,4 @@
-package com.indra.book_my_show.EntryDtos;
+package com.indra.book_my_show.Request;
 
 import com.indra.book_my_show.Enums.Genre;
 import com.indra.book_my_show.Enums.Language;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class MovieEntryDto {
 
-    private Integer movieId;
+//    private Integer movieId;
     private String movieName;
     private double rating;
     private double duration;

@@ -1,6 +1,6 @@
 package com.indra.book_my_show.convertors;
 
-import com.indra.book_my_show.EntryDtos.UserEntryDto;
+import com.indra.book_my_show.Request.UserEntryDto;
 import com.indra.book_my_show.Models.UserEntity;
 
 public class UserConvertor {

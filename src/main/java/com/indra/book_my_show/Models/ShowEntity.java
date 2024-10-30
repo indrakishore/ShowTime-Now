@@ -1,11 +1,8 @@
 package com.indra.book_my_show.Models;
 
-import com.indra.book_my_show.Genres.ShowType;
+import com.indra.book_my_show.Enums.ShowType;
 import jakarta.persistence.*;
-import jdk.jfr.Timestamp;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -17,23 +14,28 @@ import java.util.List;
 
 @Entity
 @Table(name = "shows")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
+@Builder
 @AllArgsConstructor
 public class ShowEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private LocalDate showDate;
-    private LocalTime showTime;
+    private Integer showId;
+
+    private LocalDate showDate; //"yyyy-mm-dd"
+    private LocalTime showTime;//"HH:MM:SS"
+
     @Enumerated(value = EnumType.STRING)
     private ShowType showType;
 
-    @CreationTimestamp
-    private Date createdOn;
-    @UpdateTimestamp
-    private Date updateOn;
+//    @CreationTimestamp
+//    private Date createdOn;
+
+//    @UpdateTimestamp
+//    private Date updateOn;
 
     //This is child wrt to the movieEntity
     @ManyToOne

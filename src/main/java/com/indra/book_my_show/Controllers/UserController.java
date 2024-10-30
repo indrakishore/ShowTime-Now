@@ -1,6 +1,6 @@
 package com.indra.book_my_show.Controllers;
 
-import com.indra.book_my_show.EntryDtos.UserEntryDto;
+import com.indra.book_my_show.Request.UserEntryDto;
 import com.indra.book_my_show.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

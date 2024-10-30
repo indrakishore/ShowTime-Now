@@ -1,4 +1,4 @@
-package com.indra.book_my_show.EntryDtos;
+package com.indra.book_my_show.Request;
 
 import lombok.Data;
 

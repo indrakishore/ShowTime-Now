@@ -1,9 +1,14 @@
-package com.indra.book_my_show.Genres;
+package com.indra.book_my_show.Enums;
 
 public enum Genre {
 
     FICTIONAL,
     ROMANTIC,
     COMIC,
-    HORROR
+    HORROR,
+    BIOGRAPHY,
+    DRAMA,
+    ACTION,
+    THRILLER,
+    SCIFI
 }
