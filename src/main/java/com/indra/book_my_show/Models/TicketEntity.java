@@ -1,9 +1,7 @@
 package com.indra.book_my_show.Models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -11,20 +9,26 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "tickets")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
+@Builder
 @AllArgsConstructor
 public class TicketEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID ticketId;
+
     private String movieName;
+
     private LocalDate showDate;
+
     private LocalTime showTime;
-    private int totalAmount;
-    private String tickedId = UUID.randomUUID().toString();
-    private String theaterName;
+
+    private Integer totalAmountPaid;
+
+    private String theaterNameAndAddress;
 
     @JoinColumn
     @ManyToOne

@@ -13,5 +13,7 @@ public interface MovieRepository extends JpaRepository<MovieEntity, Integer> {
     //Custom Query for findMovieByMovieName
     @Query(value = "select * from movies m where m.movie_name=:movieName",nativeQuery = true)
     MovieEntity findMovie(String movieName);
+
+    MovieEntity findMovieByMovieName(String movieName);
 }
 

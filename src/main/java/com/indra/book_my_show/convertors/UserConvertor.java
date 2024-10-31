@@ -14,7 +14,7 @@ public class UserConvertor {
                 .address(userEntryDto.getAddress())
                 .email(userEntryDto.getEmail())
                 .name(userEntryDto.getName())
-                .mobNo(userEntryDto.getMobNo())
+                .mobileNo(userEntryDto.getMobNo())
                 .build(); // Correctly call build() to create the UserEntity object
 
         // Return the created UserEntity
