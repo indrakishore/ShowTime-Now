@@ -63,7 +63,7 @@ public class ShowService {
             ShowSeatEntity showSeat = ShowSeatEntity.builder()
                     .seatNumber(theaterSeat.getSeatNo())
                     .seatType(theaterSeat.getSeatType())
-                    .isBooked(Boolean.TRUE)
+                    .isAvailable(Boolean.TRUE)
                     .showEntity(show)
                     .build();
             if(theaterSeat.getSeatType().equals(SeatType.CLASSIC)) {

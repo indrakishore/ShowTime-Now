@@ -19,7 +19,7 @@ public class ShowSeatEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer showSeatId;
 
-    private boolean isBooked;
+    private boolean isAvailable;
     private Integer price; //price for the Classic seat for that particular
     private String seatNumber;
 

@@ -1,5 +1,6 @@
 package com.indra.book_my_show.Models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,8 +32,9 @@ public class UserEntity {
 
     private String address;
 
-    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
-    private List<TicketEntity> bookedTickets = new ArrayList<>();
+//    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
+//    @JsonManagedReference
+//    private List<TicketEntity> bookedTickets = new ArrayList<>();
 
 }
 

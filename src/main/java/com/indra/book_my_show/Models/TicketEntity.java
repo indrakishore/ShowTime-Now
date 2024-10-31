@@ -1,5 +1,7 @@
 package com.indra.book_my_show.Models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -32,19 +34,19 @@ public class TicketEntity {
 
     @JoinColumn
     @ManyToOne
+//    @JsonIgnore // This will exclude userEntity from JSON response
     private UserEntity userEntity;
 
-    //This is the child wrt showEntity
+    // This will exclude theaterEntity from JSON response
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     private TheaterEntity theaterEntity;
 
-
-    //Ticket is the child wrt to the show entity
+    // This will exclude showEntity from JSON response
     @ManyToOne
     @JoinColumn
+    @JsonIgnore
     private ShowEntity showEntity;
-
-
 
 }

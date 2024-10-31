@@ -1,6 +1,5 @@
 package com.indra.book_my_show.Request;
 
-
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -15,6 +14,5 @@ public class BookTicketRequest {
     private LocalTime showTime;
     private List<String> requestedSeats;
     private Integer theaterId;
-    private String mobileNumber;
-
+    private String mobileNumber; // Keep this to link the ticket to the user based on mobile number
 }

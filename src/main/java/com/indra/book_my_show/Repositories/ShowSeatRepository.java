@@ -14,6 +14,6 @@ public interface ShowSeatRepository extends JpaRepository<ShowSeatEntity, Intege
 //    public List<ShowSeatEntity> findAllByShowEntity(ShowEntity showEntity);//inbuilt
 
      //custom JPA Query
-    @Query(value = "select  * from show_seats where showid=:showId", nativeQuery = true)
+    @Query(value = "select  * from show_seats where show_entity_show_id=:showId", nativeQuery = true)
     public List<ShowSeatEntity> findShowSeats(Integer showId);
 }
