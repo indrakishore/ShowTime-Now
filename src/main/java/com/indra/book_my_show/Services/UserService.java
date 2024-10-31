@@ -13,12 +13,12 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public String addUser(UserEntryDto userEntryDto) throws Exception, NullPointerException{
+    public String addUser(UserEntryDto userEntryDto) {
 
         UserEntity userEntity = UserConvertor.convertDtoToEntity(userEntryDto);
-        userRepository.save(userEntity);
+        userEntity = userRepository.save(userEntity);
 
-        return "User added successfully.";
+        return "User added successfully to the Db with userId: " + userEntity.getUserId();
     }
 
 

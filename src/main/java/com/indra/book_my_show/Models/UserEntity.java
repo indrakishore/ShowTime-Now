@@ -8,7 +8,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,16 +17,17 @@ public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer userId;
+
     private String name;
-    private int age;
+    private Integer age;
+
 
     @Column(unique = true, nullable = false)
     private String email;
 
-    @NonNull
     @Column(unique = true)
-    private String mobNo;
+    private String mobileNo;
 
     private String address;
 
